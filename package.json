@@ -1,0 +1,17 @@
+{
+  "name": "filter-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "An Atom syntax theme with unbleached paper background colors and vibrant foreground colors.",
+  "keywords": [
+    "colorful",
+    "light",
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/mikol/filter-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
