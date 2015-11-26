@@ -21,6 +21,7 @@ atom-text-editor::shadow,
 
   .cursor {
     color: @syntax-cursor-color;
+    position: static;
   }
 
   .find-result .region {
@@ -37,14 +38,28 @@ atom-text-editor::shadow,
 
     .line-number,
     .git-diff-icon .line-number {
+      width: auto;
+
       &.cursor-line {
         background-color: @syntax-gutter-background-color-selected;
         color: @syntax-gutter-text-color-selected;
-        width: auto;
+
+        &:after {
+          content: "";
+          position: absolute;
+        }
       }
 
       &.cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
+      }
+    }
+
+    &[gutter-name="linter"] {
+      order: -1;
+
+      & > .custom-decorations {
+        background-color: transparent !important;
       }
     }
   }
@@ -67,6 +82,7 @@ atom-text-editor::shadow,
   .line {
     &.cursor-line {
       background-color: @syntax-gutter-background-color-selected;
+      position: relative;
 
       &:after {
         background-color: @syntax-gutter-background-color-selected;
@@ -94,6 +110,10 @@ atom-text-editor::shadow,
       position: relative;
       width: auto;
     }
+  }
+
+  .spell-check-misspelling .region {
+    z-index: 4;
   }
 
   .selection .region {
@@ -384,6 +404,10 @@ atom-text-editor:not(.mini)::shadow {
 .support {
   &.class {
     color: @blue;
+  }
+
+  &.function {
+    color: @orange;
   }
 
   &.css {
