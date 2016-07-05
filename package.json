@@ -1,7 +1,7 @@
 {
   "name": "filter-syntax",
   "theme": "syntax",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "An Atom syntax theme with unbleached paper background colors and vibrant foreground colors.",
   "keywords": [
     "colorful",
