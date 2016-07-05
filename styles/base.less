@@ -19,6 +19,10 @@ atom-text-editor::shadow,
     border: 1px dotted @orange;
   }
 
+  .cursors {
+    position: fixed;
+  }
+
   .cursor {
     color: @syntax-cursor-color;
   }
@@ -219,6 +223,10 @@ atom-text-editor:not(.mini)::shadow {
   text-decoration: line-through;
 }
 
+.json.source {
+  color: darken(@syntax-background-color, 47%);
+}
+
 .keyword {
   color: @red;
 
@@ -364,6 +372,15 @@ atom-text-editor:not(.mini)::shadow {
       .string.html & {
         color: darken(@blue, 13%);
       }
+
+      &.json {
+        color: darken(@red, 13%);
+
+        .structure.array > .string.json > &,
+        .structure.dictionary.value > .string.json > & {
+          color: darken(@blue, 13%);
+        }
+      }
     }
   }
 
@@ -385,6 +402,16 @@ atom-text-editor:not(.mini)::shadow {
 
   &.html {
     color: @blue;
+  }
+
+
+  &.json {
+    color: @red;
+
+    .structure.array > &,
+    .structure.dictionary.value > & {
+      color: @blue;
+    }
   }
 
   &.other.link {

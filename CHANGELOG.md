@@ -10,3 +10,8 @@
 
   * Remove `position: static;` declaration from `atom-text-editor .cursor` and
     `atom-text-editor::shadow .cursor` rulesets.
+
+## 0.2.2 – Fix Position of Multiple Cursors #2
+
+  * Add `position: fixed;` declaration to `.cursors` ruleset.
+  * Handle JSON syntax specifically.
