@@ -15,3 +15,9 @@
 
   * Add `position: fixed;` declaration to `.cursors` ruleset.
   * Handle JSON syntax specifically.
+
+## 0.3.0 – Atom Compatibility Update and Diff Packages Support
+
+  * Rename deprecated CSS selectors.
+  * Add support for split-diff package.
+  * Add support for git-plus package diffs.
