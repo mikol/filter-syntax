@@ -1,15 +1,13 @@
 @import "syntax-variables";
 
 atom-text-editor {
-  background-color: @syntax-background-color;
+  background-color: @syntax-gutter-background-color;
   color: @syntax-text-color;
 
   .bracket-matcher .region {
     background-color: fade(lighten(@magenta, 13%, relative), 13%);
     border-bottom: 2px solid fade(@magenta, 33%);
     box-sizing: content-box;
-    mix-blend-mode: darken;
-    z-index: 1;
   }
 
   .current-result .region {
@@ -28,14 +26,14 @@ atom-text-editor {
   .find-result .region {
     background-color: @syntax-selection-color;
     border: 1px dotted @orange;
-    mix-blend-mode: darken;
-    opacity: 0.20;
+    opacity: 0.40;
     z-index: 1;
   }
 
   .gutter {
     background-color: @syntax-gutter-background-color;
     color: @syntax-gutter-text-color;
+    margin-top: 1ch;
 
     .line-number,
     .git-diff-icon .line-number {
@@ -103,6 +101,11 @@ atom-text-editor {
         background-color: fade(@syntax-color-removed, 13%);
       }
     }
+  }
+
+  .highlights {
+    mix-blend-mode: multiply;
+    z-index: 1;
   }
 
   .indent-guide {
@@ -242,20 +245,32 @@ atom-text-editor {
 
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
-    margin-left: 2ch;
+    margin-left: 1ch;
     mix-blend-mode: darken;
   }
 }
 
 atom-text-editor:not(.mini) {
+  .region {
+    &.bracket-matcher,
+    &.current-result,
+    &.find-result,
+    &.selection {
+      margin-left: 1ch;
+    }
+  }
+
   .gutter {
     margin-right: 0;
-    padding-top: 0.5em;
   }
 
   .scroll-view {
-    padding-left: 2ch;
-    padding-top: 0.5em;
+    background-color: @syntax-background-color !important; // Override style attribute.
+    padding-top: 1ch;
+
+    .lines {
+      padding-left: 1ch;
+    }
   }
 }
 
@@ -296,7 +311,8 @@ atom-text-editor:not(.mini) {
     color: @purple;
   }
 
-  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
+  &.syntax--name.syntax--class,
+  &.syntax--name.syntax--type.syntax--class {
     color: @orange;
   }
 
@@ -329,7 +345,7 @@ atom-text-editor:not(.mini) {
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: @green;
+    color: @orange;
   }
 }
 

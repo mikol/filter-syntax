@@ -21,3 +21,5 @@
   * Rename deprecated CSS selectors.
   * Add support for split-diff package.
   * Add support for git-plus package diffs.
+
+### 0.3.2 – Highlights Z-Index Compatibility
