@@ -22,4 +22,8 @@
   * Add support for split-diff package.
   * Add support for git-plus package diffs.
 
-### 0.3.2 – Highlights Z-Index Compatibility
+### 0.3.3 – Highlights Z-Index Compatibility
+
+### 0.3.4 – Conflict Blocks Compatibility
+
+  * Pass pointer events through `.highlights` container.
