@@ -27,3 +27,7 @@
 ### 0.3.4 – Conflict Blocks Compatibility
 
   * Pass pointer events through `.highlights` container.
+
+### 0.3.5 – Spelling Highlights
+
+  * Use `margin-left: 1ch` to offset spelling highlights correctly
