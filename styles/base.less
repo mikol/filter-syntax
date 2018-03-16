@@ -188,7 +188,6 @@ atom-text-editor {
   }
 
   .spell-check-misspelling .region {
-    margin-left: 1ch;
     z-index: 4;
   }
 
@@ -253,15 +252,6 @@ atom-text-editor {
 }
 
 atom-text-editor:not(.mini) {
-  .region {
-    &.bracket-matcher,
-    &.current-result,
-    &.find-result,
-    &.selection {
-      margin-left: 1ch;
-    }
-  }
-
   .gutter {
     margin-right: 0;
   }
@@ -301,6 +291,26 @@ atom-text-editor:not(.mini) {
 
   &.syntax--other.syntax--symbol {
     color: @cyan;
+  }
+}
+
+.syntax--ts,
+.syntax--tsx {
+  &.syntax--meta.syntax--separator {
+    background-color: inherit;
+    color: @red;
+  }
+
+  &.syntax--keyword.syntax--control.syntax--default {
+    color: @blue;
+  }
+
+  &.syntax--meta.syntax--class {
+    color: @syntax-text-color;
+  }
+
+  &.syntax--name.syntax--function {
+    color: @orange !important;
   }
 }
 

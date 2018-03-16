@@ -31,3 +31,7 @@
 ### 0.3.5 – Spelling Highlights
 
   * Use `margin-left: 1ch` to offset spelling highlights correctly
+
+### 0.3.6 – Spelling Highlights Reprised
+
+  * This time, remove the offset. :¬P
